@@ -1,0 +1,16 @@
+.box {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+  padding: 10px;
+  border: 1px solid red;
+  margin: 10px;
+}
+
+.box-parent {
+}
+
+.box:nth-child(even) {
+  background-color: gold;
+}
