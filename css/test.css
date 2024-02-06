@@ -1,16 +1,31 @@
-.box {
-  display: inline-block;
-  width: 100px;
+* {
+  box-sizing: border-box;
+}
+
+.item {
+  flex-basis: 100px;
   height: 100px;
   background-color: burlywood;
   padding: 10px;
-  border: 1px solid red;
+  border: 3px solid red;
   margin: 10px;
 }
 
-.box-parent {
+.flex-container {
+  display: flex;
+  flex-direction: row; /* за замовчуванням стоїть row (тобто вздовж головної осі, або іншими словами в ряд) */
+  /* row - зліва в рядок від блока 1 до блока 4, column - зліва стовпчиком від блока 1 до блока 4, row-reverse - справа в рядок від блока 4 до 1 */
+  /* justify-content - розташовує блоки контенту всередині контейнеру; justify-content: center - розташує блоки контенту в центрі контейнеру */
+  justify-content: center;
+
+  /* align-item - вирівнює елементи контейнеру з різним розміром відносно розміру контейнеру. найчастіше використовують align-item:center */
+  /* flex-wrap - дозволяє робити перенос елементів на новий рядок, яшо їх дуже багато і вони не вміщуються в розміри сторінки */
+  /* align-self - те саме, що й align-item, тільки керує лише 1 елементом в контейнері, а не всіма */
 }
 
-.box:nth-child(even) {
-  background-color: gold;
+.item:nth-child(2) {
+  flex-grow: 0; /* Визначає поведінку елементу якшо в контейнері є вільне місце; за замовчуванням це 0 */
+  flex-shrink: 1; /* Визначає поведінку елементу якшо в контейнері нема вільного місця; за замовчуванням це 1 */
+  flex-basis: 50px;
+  order: 4; /* змінює порядок елементів в контейнері */
 }
